@@ -11,7 +11,8 @@ const codificar = (mensagem) => {
 
   const trocarCaracteres = (match) => {
     let chaveLista = Object.entries(chave);
-    for (let i = 0; i < chaveLista.length; i++) {
+    let tamanhoDaLista = chaveLista.length;
+    for (let i = 0; i < tamanhoDaLista; i++) {
       let regexCaractere = new RegExp(chaveLista[i][0], "i");
       if (regexCaractere.test(match)) {
         return "".concat(match, chaveLista[i][1].slice(1));

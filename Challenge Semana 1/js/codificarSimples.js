@@ -1,4 +1,4 @@
-const codificar = (mensagem) => {
+const codificarSimples = (mensagem) => {
   let chave = {
     a: "ai",
     e: "enter",

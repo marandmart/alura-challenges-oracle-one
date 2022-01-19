@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#criptografar textarea {
+  display: block;
+  resize: none;
+  width: 35%;
+  height: 10em;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0 0 5px;
+  background-color: #007bff;
+  color: white;
+}
+button:hover {
+  background-color: #009bff;
+}
+
+#descriptografar textarea {
+  display: block;
+  resize: none;
+  width: 35%;
+  height: 10em;
+}

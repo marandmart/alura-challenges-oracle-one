@@ -1,4 +1,4 @@
-const descodificar = (mensagem) => {
+const descodificarSimples = (mensagem) => {
   let chave = ["ai", "enter", "imes", "ober", "ufat"];
 
   let regex = new RegExp(chave.join("|"), "ig");
