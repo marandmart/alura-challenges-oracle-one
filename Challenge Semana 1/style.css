@@ -1,19 +1,53 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body h1 {
+  text-align: center;
+}
+#conteudo {
+  padding-bottom: 2.5em;
 }
 
-#criptografar textarea {
+#main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 2em 0 2em 0;
+}
+
+.box {
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 5px;
+  width: 40%;
+  margin: 0 auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+#cripto-texto,
+#texto-resultado {
   display: block;
   resize: none;
-  width: 35%;
-  height: 10em;
+  width: 90%;
+  height: 14em;
 }
 
-button {
+#copiarBtn,
+#criptografarBtn,
+#descriptografarBtn {
   padding: 10px;
   border-radius: 5px;
-  margin: 5px 0 0 5px;
+  margin: 5px 0;
   background-color: #007bff;
   color: white;
 }
@@ -21,9 +55,24 @@ button:hover {
   background-color: #009bff;
 }
 
-#descriptografar textarea {
-  display: block;
-  resize: none;
-  width: 35%;
-  height: 10em;
+footer {
+  background-color: turquoise;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  margin-top: auto;
+}
+
+@media only screen and (max-width: 500px) {
+  #main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .box {
+    width: 80%;
+    margin: 1.5em 0 1.5em 0;
+  }
 }
