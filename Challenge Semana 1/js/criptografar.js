@@ -1,4 +1,4 @@
-const codificarSimples = (mensagem) => {
+const criptografar = (mensagem) => {
   let chave = {
     a: "ai",
     e: "enter",
@@ -7,7 +7,7 @@ const codificarSimples = (mensagem) => {
     u: "ufat",
   };
 
-  let regex = new RegExp(Object.keys(chave).join("|"), "ig");
+  let regex = new RegExp(Object.keys(chave).join("|"), "g");
 
   return mensagem.replace(regex, (match) => {
     return chave[match];
