@@ -11,29 +11,37 @@ document.addEventListener("DOMContentLoaded", () => {
   copiarBtn.addEventListener("click", copiarTexto);
   limparBtn.addEventListener("click", limparTexto);
 
+  // seleciona o campo de texto
+  let inputTextarea = document.getElementById("entrada-texto");
+
+  // adiciona ou remove o botão de limpar
+  inputTextarea.addEventListener("input", (e) => {
+    if (e.target.value.length) {
+      limparBtn.classList.remove("hide-button");
+    } else {
+      limparBtn.classList.add("hide-button");
+    }
+  });
+
   // coloca o foco no elemento para começar digitação mais rápido
-  document.getElementById("cripto-texto").focus();
+  inputTextarea.focus();
 });
 
 const processarTexto = (e) => {
   // seleciona o campo do texto
-  let texto = document.getElementById("cripto-texto");
-
-  // declara variável que receberá texto processado
-  let textoCriptografado;
-
-  // criptografa o texto de acordo com o botão apertado
-  if (e.target.textContent == "Criptografar") {
-    textoCriptografado = criptografar(texto.value);
-  } else if (e.target.textContent == "Descriptografar") {
-    textoCriptografado = descriptografar(texto.value);
-  }
+  let fonte = document.getElementById("entrada-texto");
 
   // seleciona o campo que receberá o texto criptografado
   let destino = document.getElementById("texto-resultado");
 
-  // insere o texto no campo que mostra o resultado para o usuário
-  destino.value = textoCriptografado;
+  // criptografa o texto de acordo com o botão apertado
+  if (e.target.id == "criptografarBtn") {
+    destino.textContent = criptografar(fonte.value);
+  } else if (e.target.id == "descriptografarBtn") {
+    destino.textContent = descriptografar(fonte.value);
+  }
+
+  alterarVisualizacao();
 };
 
 const copiarTexto = () => {
@@ -41,9 +49,19 @@ const copiarTexto = () => {
   let destino = document.getElementById("texto-resultado");
 
   // salva na clipboard
-  navigator.clipboard.writeText(destino.value);
+  navigator.clipboard.writeText(destino.textContent);
 };
 
 const limparTexto = () => {
-  document.getElementById("cripto-texto").value = "";
+  document.getElementById("entrada-texto").value = "";
+  document.getElementById("limparBtn").classList.add("hide-button");
+  document.getElementById("entrada-texto").focus();
+};
+
+const alterarVisualizacao = () => {
+  let resultado = document.getElementById("mostra-resultado");
+  let semResultado = document.getElementById("sem-resultado");
+
+  semResultado.classList.add("esconder");
+  resultado.classList.remove("esconder");
 };
