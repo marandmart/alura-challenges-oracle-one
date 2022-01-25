@@ -110,6 +110,17 @@ header h1 {
   text-align: left;
   flex-grow: 4;
 }
+.aviso {
+  color: #495057;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+.aviso img {
+  display: block;
+}
 #copiarBtn {
   width: 90%;
   margin: auto;
@@ -142,12 +153,18 @@ header h1 {
 }
 
 footer {
-  background-color: turquoise;
+  background-color: lightblue;
   color: black;
   text-align: center;
   font-weight: bold;
   width: 100%;
   margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer a {
+  display: block;
 }
 
 @media (min-width: 481px) and (max-width: 820px) {
@@ -157,6 +174,7 @@ footer {
   #main {
     flex-direction: column;
     height: auto;
+    margin-bottom: 1.5em;
   }
   .botao-padrao {
     width: 25%;
